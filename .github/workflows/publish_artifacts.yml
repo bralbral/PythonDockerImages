@@ -1,31 +1,38 @@
-# Publish GitHub workflow artifacts tutorial example
-name: Publish GitHub Actions Artifacts Example
+name: Publish "pip download -r *.txt" as artifacts
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-
   archive-build-artifacts:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [ ubuntu-latest, windows-latest ]
+        python-version: ['3.9.2']
+
+    runs-on: ${{ matrix.platform }}
     steps:
 
-
-      - name: Step 0 - Go to root project directory
+      - name: ${{ matrix.platform }}  ${{ matrix.python-version }} Get Root project folder
         uses: actions/checkout@v2.3.4
 
-      - name: Step 1 - Create a temporary artifact downloads folder
+      - uses: actions/setup-python@v4
+        with:
+          python-version:  ${{ matrix.python-version }}
+          architecture: 'x64'
+
+      - name: ${{ matrix.platform }}  ${{ matrix.python-version }} Create a temporary artifacts folder
         run: mkdir downloads
 
-      - name: step 2 - Add artifacts to publish to the temp folder
+      - name: ${{ matrix.platform }}  ${{ matrix.python-version }} Add artifacts to folder
         run: | 
             cd downloads
             pip download -r ../prefect_requirements.txt
             cd ..
 
-      - name: Step 3 - Use the Upload Artifact GitHub Action
+      - name: ${{ matrix.platform }}  ${{ matrix.python-version }} Upload artifacts folder
         uses: actions/upload-artifact@v2
         with:
-          name: assets-for-download
+          name: ${{ matrix.platform }}-${{ matrix.python-version }}-artifacts
           path: downloads
