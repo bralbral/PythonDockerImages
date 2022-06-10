@@ -1,0 +1,59 @@
+name: Build docker images and publish to dockerhub
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  build-and-push-docker:
+    strategy:
+      matrix:
+        platform: [ ubuntu-latest ]
+        python-version: [ '3.9.2' ]
+        requirements_file: [ 'prefect_requirements.txt' ]
+        architecture: [ 'x64' ]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Get Root project folder
+        uses: actions/checkout@v3
+
+      name: Docker meta
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+        images: |
+          name/app
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@master
+        with:
+          platforms: linux/amd64,linux/arm64
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@master
+
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
