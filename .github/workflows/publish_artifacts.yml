@@ -15,7 +15,8 @@ jobs:
         run: mkdir downloads
 
       - name: step 2 - Add artifacts to publish to the temp folder
-        run: |
+        run: | 
+            ls -l
             cd downloads
             pip download -r ../prefect_requirements.txt
             cd ..
