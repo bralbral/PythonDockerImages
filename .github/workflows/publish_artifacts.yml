@@ -36,5 +36,5 @@ jobs:
       - name: Upload artifacts folder
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.platform }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ requirements_file }}-artifacts
+          name: ${{ matrix.platform }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ matrix.requirements_file }}-artifacts
           path: downloads
