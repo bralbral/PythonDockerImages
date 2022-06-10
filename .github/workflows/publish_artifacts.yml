@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+
+      - name: Step 0 - Go to root project directory
+        uses: actions/checkout@v2.3.4
+
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
 
       - name: step 2 - Add artifacts to publish to the temp folder
         run: | 
-            ls -l
             cd downloads
             pip download -r ../prefect_requirements.txt
             cd ..
