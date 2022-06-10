@@ -16,9 +16,9 @@ jobs:
 
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
-          cd downloads
-          pip download -r ../prefect_requirements.txt
-          cd ..
+            cd downloads
+            pip download -r ../prefect_requirements.txt
+            cd ..
 
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
