@@ -16,7 +16,10 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
 
-      - name: ${{ matrix.platform }}  ${{ matrix.python-version }} ${{ matrix.architecture }} ${{ requirements_file }} Get Root project folder
+      - name: |
+              ${{ matrix.platform }}  ${{ matrix.python-version }} 
+              ${{ matrix.architecture }} ${{ matrix.requirements_file }} 
+              Get Root project folder
         uses: actions/checkout@v2.3.4
 
       - uses: actions/setup-python@v4
@@ -36,5 +39,7 @@ jobs:
       - name: Upload artifacts folder
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.platform }}-${{ matrix.python-version }}-${{ matrix.architecture }}-${{ matrix.requirements_file }}-artifacts
+          name: | 
+                 ${{ matrix.platform }}_${{ matrix.python-version }}_
+                 ${{ matrix.architecture }}_${{ matrix.requirements_file }}_artifacts
           path: downloads
