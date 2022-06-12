@@ -10,7 +10,7 @@ jobs:
       matrix:
         platform: [ ubuntu-latest, windows-latest ]
         python-version: ['3.9.2']
-        requirements_file: ['prefect_requirements.txt']
+        project_type: ['prefect']
         architecture: ['x64']
 
     runs-on: ${{ matrix.platform }}
@@ -30,11 +30,11 @@ jobs:
       - name: Add artifacts to folder
         run: | 
             cd downloads
-            pip download -r ../${{ matrix.requirements_file }}
+            pip download -r ../${{ matrix.project_type }}_requirements.txt
             cd ..
 
       - name: Upload artifacts folder
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.platform }}_${{ matrix.python-version }}_${{ matrix.architecture }}_${{ matrix.requirements_file }}_artifacts
+          name: ${{ matrix.platform }}_${{ matrix.python-version }}_${{ matrix.architecture }}_${{ matrix.project_type }}_artifacts
           path: downloads

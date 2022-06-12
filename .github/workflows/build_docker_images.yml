@@ -12,7 +12,7 @@ jobs:
       matrix:
         platform: [ ubuntu-latest ]
         python-version: [ '3.9.2' ]
-        requirements_file: [ 'prefect_requirements.txt' ]
+        project_type: [ 'prefect' ]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -21,7 +21,7 @@ jobs:
 
       - name: Prepare req file
         run: |
-          cp ./${{ matrix.requirements_file }} ./requirements.txt
+          cp ./${{ matrix.project_type }}_requirements.txt ./requirements.txt
 
       - name: Docker meta
         id: meta
@@ -30,7 +30,7 @@ jobs:
           images: |
             ${{ secrets.DOCKER_REPO }}/${{ secrets.DOCKER_PROJECT }}
           tags: |
-            type= ${{matrix.python-version}}-${{matrix.requirements_file}}-${{ github.event.repository.updated_at}} 
+            type=semver, pattern=${{matrix.python-version}}-${{matrix.project_type}}-${{ github.event.repository.updated_at}} 
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
