@@ -145,3 +145,4 @@ cython_debug/
 
 /прибыль
 /.temp
+/requirements.txt
