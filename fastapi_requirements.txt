@@ -15,7 +15,7 @@ watchgod==0.8.2
 websockets==10.2
 ujson==5.2.0
 PyYAML==6.0
-uvloop==0.16.0
+uvloop==0.16.0; platform_system=='linux'
 loguru==0.6.0
 elasticsearch @ git+https://github.com/bralbral/elasticsearch-py.git@fba1c6c657e9a8e80c30d13412014d022d151559
 aiohttp==3.8.1
