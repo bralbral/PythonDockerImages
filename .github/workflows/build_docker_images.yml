@@ -13,7 +13,6 @@ jobs:
         platform: [ ubuntu-latest ]
         python-version: [ '3.9.2' ]
         requirements_file: [ 'prefect_requirements.txt' ]
-        architecture: [ 'x64' ]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -31,10 +30,7 @@ jobs:
           images: |
             ${{ secrets.DOCKER_REPO }}/${{ secrets.DOCKER_PROJECT }}
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type= ${{matrix.python-version}}-${{matrix.requirements_file}}-${{ github.event.repository.updated_at}} 
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
