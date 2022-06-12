@@ -5,6 +5,7 @@ WORKDIR /app
 COPY requirements.txt ./
 
 RUN apt-get update && \
+    apt-get -y install git &&\
     apt-get -y install gcc && \
     apt-get -y install g++ &&  \
     apt-get -y install unixodbc-dev && \
