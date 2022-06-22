@@ -5,7 +5,7 @@ fastapi==0.75.1
 h11==0.13.0
 httptools==0.4.0
 idna==3.3
-pydantic==1.9.0
+pydantic==1.7.4
 python-dotenv==0.20.0
 sniffio==1.2.0
 starlette==0.17.1
@@ -20,3 +20,7 @@ loguru==0.6.0
 elasticsearch @ git+https://github.com/bralbral/elasticsearch-py.git@fba1c6c657e9a8e80c30d13412014d022d151559
 aiohttp==3.8.1
 aiofiles==0.8.0
+nltk==3.7
+spacy==3.3.1
+# ru model for spacy
+ru-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_sm-3.3.0/ru_core_news_sm-3.3.0-py3-none-any.whl
