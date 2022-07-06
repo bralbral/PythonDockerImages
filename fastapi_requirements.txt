@@ -13,7 +13,7 @@ typing_extensions==4.1.1
 uvicorn==0.17.6
 watchgod==0.8.2
 websockets==10.2
-ujson==5.2.0
+ujson==5.4.0
 PyYAML==6.0
 uvloop==0.16.0; platform_system=='Linux'
 loguru==0.6.0
