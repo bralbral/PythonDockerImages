@@ -30,7 +30,7 @@ jobs:
           images: |
             ${{ secrets.DOCKER_REPO }}/${{ secrets.DOCKER_PROJECT }}
           tags: |
-            type=raw, value=${{matrix.python-version}}-${{matrix.project_type}}-${{ github.event.repository.updated_at}} 
+            type=raw, value=${{matrix.python-version}}-${{matrix.project_type}}-${{ github.event.repository.pushed_at}} 
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
