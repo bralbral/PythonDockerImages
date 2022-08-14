@@ -12,7 +12,7 @@ jobs:
       matrix:
         platform: [ ubuntu-latest ]
         python-version: [ '3.9.2' ]
-        project_type: [ 'prefect' , 'fastapi']
+        project_type: [ 'prefect' , 'fastapi', 'prerect_2.0']
 
     runs-on: ${{ matrix.platform }}
     steps:
