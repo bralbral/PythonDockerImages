@@ -10,7 +10,7 @@ jobs:
       matrix:
         platform: [ ubuntu-latest, windows-latest ]
         python-version: ['3.9.2']
-        project_type: ['prefect', 'fastapi', 'prerect_2.0']
+        project_type: ['prefect', 'fastapi', 'prefect_2.0']
         architecture: ['x64']
 
     runs-on: ${{ matrix.platform }}
