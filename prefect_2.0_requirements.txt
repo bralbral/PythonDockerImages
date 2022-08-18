@@ -1,11 +1,11 @@
-aiochclient==2.1.0
+aiochclient==2.2.0
 aiofiles==0.8.0
 aiohttp==3.8.1
 aiohttp-cors==0.7.0
 aioodbc==0.3.3
 aiosignal==1.2.0
 aiosqlite==0.17.0
-alembic==1.8.0
+alembic==1.8.1
 anyio==3.6.1
 asgi-lifespan==1.0.1
 async-timeout==4.0.2
@@ -75,10 +75,10 @@ Mako==1.2.1
 MarkupSafe==2.1.1
 marshmallow==3.17.0
 marshmallow-oneofschema==3.0.1
-minio==7.1.9
+minio==7.1.11
 msgpack==1.0.4
 multidict==6.0.2
-murmurhash==1.0.7
+murmurhash==1.0.8
 mypy-extensions==0.4.3
 nltk==3.7
 numpy==1.23.0
@@ -95,7 +95,7 @@ pathy==0.6.2
 pendulum==2.1.2
 Pillow==9.2.0
 platformdirs==2.5.2
-prefect==2.0.4
+prefect==2.1.1
 prefect-aws==0.1.2
 prefect-dask==0.1.2
 prefect-docker==0.0.0a1
