@@ -101,10 +101,10 @@ prefect-shell==0.1.1
 prefect-sqlalchemy==0.2.0
 preshed==3.0.7
 prometheus-client==0.13.1
-protobuf==4.21.6
-psutil==5.9.2
-py-spy==0.3.14
-pyarrow==9.0.0
+protobuf==3.20.2
+psutil==5.9.1
+py-spy==0.3.12
+pyarrow==8.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.21
