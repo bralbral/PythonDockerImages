@@ -25,3 +25,9 @@ spacy==3.4.0
 # models for spacy
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl
 ru-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_sm-3.4.0/ru_core_news_sm-3.4.0-py3-none-any.whl
+# develop
+pre-commit==2.20.0
+black==22.10.0
+autoflake==1.7.7
+reorder-python-imports==3.9.0
+pyupgrade==3.2.0
