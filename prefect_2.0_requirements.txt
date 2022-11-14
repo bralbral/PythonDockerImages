@@ -29,7 +29,7 @@ confluent-kafka==1.9.2
 coolname==1.1.0
 cramjam==2.5.0
 croniter==1.3.7
-cryptography==38.0.1
+cryptography==38.0.3
 cymem==2.0.6
 dask==2022.9.1
 DAWG-Python==0.7.2
