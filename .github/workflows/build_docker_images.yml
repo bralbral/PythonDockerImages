@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         platform: [ ubuntu-latest ]
-        python-version: [ '3.10.0' ]
+        python-version: [ '3.10.9' ]
         project_type: [ 'prefect' , 'fastapi', 'prefect_2.0']
 
     runs-on: ${{ matrix.platform }}
