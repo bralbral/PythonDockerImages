@@ -1,17 +1,17 @@
 # async acces to os
-aiofiles==22.1.0
+aiofiles==23.1.0
 # json speedup serialising
-orjson==3.8.5
+orjson==3.8.7
 ujson==5.7.0
 python-dateutil==2.8.2
 # yaml-file
 PyYAML==6.0
 # fastapi
-fastapi==0.89.1
+fastapi==0.94.1
 # fastapi rate limitter
 slowapi==0.1.7
 # uvicorn
-uvicorn==0.20.0
+uvicorn==0.21.0
 # uvicorn-speedup
 httptools == 0.5.0
 # logging
@@ -27,21 +27,21 @@ ru-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ru
 # fast-en
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
 # accuracy-ru
-# ru_core_news_lg @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.5.0/ru_core_news_lg-3.5.0-py3-none-any.whl
+ru_core_news_lg @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.5.0/ru_core_news_lg-3.5.0-py3-none-any.whl
 # accuracy-en
-# en_core_web_trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.5.0/en_core_web_trf-3.5.0-py3-none-any.whl
+en_core_web_trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.5.0/en_core_web_trf-3.5.0-py3-none-any.whl
 # develop
-pre-commit==2.21.0
-black==22.12.0
-autoflake==2.0.0
+pre-commit==3.1.1
+black==23.1.0
+autoflake==2.0.2
 reorder-python-imports==3.9.0
 pyupgrade==3.3.1
 git+https://github.com/aio-libs/sort-all.git
 # tests
-pytest==7.2.1
+pytest==7.2.2
 pytest-mock==3.10.0
 pytest-asyncio==0.20.3
 # coverage report
-coverage==7.0.5
+coverage==7.2.1
 pytest-cov==4.0.0
 coverage-badge==1.1.0
