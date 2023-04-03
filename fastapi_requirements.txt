@@ -1,7 +1,7 @@
 # async acces to os
 aiofiles==23.1.0
 # json speedup serialising
-orjson==3.8.8
+orjson==3.8.9
 ujson==5.7.0
 python-dateutil==2.8.2
 # yaml-file
@@ -29,10 +29,10 @@ en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_
 # accuracy-ru
 ru_core_news_lg @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.5.0/ru_core_news_lg-3.5.0-py3-none-any.whl
 # accuracy-en
-en_core_web_trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.5.0/en_core_web_trf-3.5.0-py3-none-any.whl
+en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.5.0/en_core_web_lg-3.5.0-py3-none-any.whl
 # develop
-pre-commit==3.2.1
-black==23.1.0
+pre-commit==3.2.2
+black==23.3.0
 autoflake==2.0.2
 reorder-python-imports==3.9.0
 pyupgrade==3.3.1
