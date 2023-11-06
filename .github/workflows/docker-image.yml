@@ -2,22 +2,20 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ["main", "develop",]
+    branches: ["main", "develop"]
   pull_request:
     branches: ["main", "develop"]
 
 jobs:
-
-  build:
+  build-for-dockerhub:
     environment: dockerhub
     strategy:
       matrix:
-        platform: [ ubuntu-latest ]
-        python-version: [ '3.11' ]
-        project_type: [ 'prefect' , 'fastapi' ]
+        platform: [ "ubuntu-latest" ]
+        python-version: [ "3.11" ]
+        project_type: [ "prefect" , "fastapi" ]
 
     runs-on: ${{ matrix.platform }}
-
     steps:
     - name: Check out the repo
       uses: actions/checkout@v4

@@ -2,17 +2,19 @@ name: Publish "pip download -r *.txt" as artifacts
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
 
 jobs:
   archive-build-artifacts:
     environment: requirements
     strategy:
       matrix:
-        platform: [ ubuntu-latest, windows-latest ]
-        python-version: ['3.11']
-        project_type: ['prefect', 'fastapi']
-        architecture: ['x64']
+        platform: [ "ubuntu-latest", "windows-latest" ]
+        python-version: ["3.11"]
+        project_type: ["prefect", "fastapi"]
+        architecture: ["x64"]
 
     runs-on: ${{ matrix.platform }}
     steps:
