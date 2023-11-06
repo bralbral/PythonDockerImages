@@ -22,7 +22,7 @@ uvloop==0.17.0; platform_system=='Linux'
 prefect==2.10.6
 prefect-aws==0.3.1
 prefect-dask==0.2.4
-prefect-docker==0.2.2
+prefect-docker==0.4.0
 prefect-email==0.2.2
 prefect-shell==0.1.5
 prefect-sqlalchemy==0.2.4
