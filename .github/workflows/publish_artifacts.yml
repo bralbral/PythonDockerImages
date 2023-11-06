@@ -6,6 +6,7 @@ on:
 
 jobs:
   archive-build-artifacts:
+    environment: requirements
     strategy:
       matrix:
         platform: [ ubuntu-latest, windows-latest ]
