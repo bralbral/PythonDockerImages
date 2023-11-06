@@ -2,7 +2,7 @@ name: Build docker images and publish to dockerhub
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 
 jobs:
