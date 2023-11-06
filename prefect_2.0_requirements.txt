@@ -25,7 +25,7 @@ prefect-dask==0.2.4
 prefect-docker==0.2.2
 prefect-email==0.2.2
 prefect-shell==0.1.5
-prefect-sqlalchemy==0.2.4
+prefect-sqlalchemy==0.3.0
 # dask block
 dask==2023.3.1
 distributed==2023.3.1
