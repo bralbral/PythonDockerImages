@@ -13,7 +13,7 @@ ldap3==2.9.1
 structlog==23.1.0
 loguru==0.7.0
 minio==7.1.14
-numpy==1.24.3
+numpy==1.26.2
 pandas==2.0.1
 paramiko==3.1.0
 rocketchat-API==1.30.0
