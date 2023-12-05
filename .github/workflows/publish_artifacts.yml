@@ -3,8 +3,6 @@ name: Publish "pip download -r *.txt" as artifacts
 on:
   push:
     branches: ["main", "develop"]
-  pull_request:
-    branches: ["main", "develop"]
 
 jobs:
   archive-build-artifacts:
