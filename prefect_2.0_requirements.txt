@@ -8,7 +8,7 @@ alembic==1.10.4
 asyncpg==0.27.0
 confluent-kafka==2.1.0
 elasticsearch==8.7.0
-fastparquet==2023.4.0
+fastparquet==2023.10.1
 ldap3==2.9.1
 structlog==23.1.0
 loguru==0.7.0
