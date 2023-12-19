@@ -15,7 +15,7 @@ loguru==0.7.0
 minio==7.1.14
 numpy==1.26.2
 pandas==2.0.1
-paramiko==3.1.0
+paramiko==3.4.0
 rocketchat-API==1.30.0
 uvloop==0.17.0; platform_system=='Linux'
 # prefect block
