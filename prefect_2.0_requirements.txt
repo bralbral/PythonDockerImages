@@ -28,6 +28,6 @@ prefect-shell==0.2.2
 prefect-sqlalchemy==0.2.4
 # dask block
 dask==2023.3.1
-distributed==2023.3.1
+distributed==2023.12.1
 bokeh==3.1.0
 prometheus-client==0.16.0
