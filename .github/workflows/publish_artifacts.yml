@@ -18,7 +18,7 @@ jobs:
     steps:
 
       - name: Get Root project folder
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
 
       - uses: actions/setup-python@v4
         with:
@@ -35,7 +35,7 @@ jobs:
             cd ..
 
       - name: Upload artifacts folder
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.platform }}_${{ matrix.python-version }}_${{ matrix.architecture }}_${{ matrix.project_type }}_artifacts
           path: downloads
