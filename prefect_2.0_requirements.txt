@@ -12,7 +12,7 @@ fastparquet==2023.10.1
 ldap3==2.9.1
 structlog==23.1.0
 loguru==0.7.0
-minio==7.1.14
+minio==7.2.0
 numpy==1.26.2
 pandas==2.0.1
 paramiko==3.4.0
