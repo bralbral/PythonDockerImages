@@ -1,4 +1,4 @@
-aiochclient==2.3.1
+aiochclient==2.6.0
 aiofiles==23.2.1
 aiohttp==3.9.1
 aiohttp-cors==0.7.0
