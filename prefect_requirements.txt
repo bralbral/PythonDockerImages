@@ -12,7 +12,7 @@ elasticsearch[async]==8.10.1
 fastparquet==2023.10.1
 ldap3==2.9.1
 clickhouse-driver==0.2.6
-orjson==3.9.10
+orjson==3.9.15
 structlog==23.2.0
 loguru==0.7.2
 minio==7.2.0
