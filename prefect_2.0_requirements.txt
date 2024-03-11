@@ -20,7 +20,7 @@ rocketchat-API==1.30.0
 uvloop==0.19.0; platform_system=='Linux'
 # prefect block
 prefect==2.10.6
-prefect-aws==0.3.1
+prefect-aws==0.4.11
 prefect-dask==0.2.4
 prefect-docker==0.2.2
 prefect-email==0.2.2
