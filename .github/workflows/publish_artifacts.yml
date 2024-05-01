@@ -11,7 +11,7 @@ jobs:
       matrix:
         platform: [ "ubuntu-latest", "windows-latest" ]
         python-version: ["3.11"]
-        project_type: ["prefect", "fastapi"]
+        project_type: ["airflow", "fastapi_ml"]
         architecture: ["x64"]
 
     runs-on: ${{ matrix.platform }}
@@ -31,7 +31,7 @@ jobs:
       - name: Add artifacts to folder
         run: | 
             cd downloads
-            pip download -r ../${{ matrix.project_type }}_requirements.txt
+            pip download -r ../requirements/${{ matrix.project_type }}_requirements.txt
             cd ..
 
       - name: Upload artifacts folder

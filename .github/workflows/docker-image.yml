@@ -11,7 +11,7 @@ jobs:
       matrix:
         platform: [ "ubuntu-latest" ]
         python-version: [ "3.11" ]
-        project_type: [ "prefect" , "fastapi" ]
+        project_type: [ "airflow" , "fastapi_ml" ]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -20,7 +20,7 @@ jobs:
 
     - name: Prepare req file
       run: |
-        cp ./${{ matrix.project_type }}_requirements.txt ./requirements.txt
+        cp ./requirements/${{ matrix.project_type }}_requirements.txt ./requirements.txt
 
     - name: Log in to Docker Hub
       uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
@@ -40,7 +40,7 @@ jobs:
       uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
       with:
         context: .
-        file: ./Dockerfile
+        file: ./dockerfiles/Dockerfile_${{ matrix.project_type }}
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
