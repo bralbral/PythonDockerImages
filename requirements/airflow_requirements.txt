@@ -16,6 +16,7 @@ aiofiles==23.2.1
 aiohttp-cors==0.7.0
 aioodbc==0.5.0
 aiosqlite==0.20.0
+alembic==1.13.1
 asyncpg==0.29.0
 confluent-kafka==2.3.0
 elasticsearch[async]==8.13.0
