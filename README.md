@@ -17,10 +17,10 @@ Getting Started
 2. Test it using ``` sh ./scripts/pip_test_env.bash ./requirements/{your_project}_requirements.txt```.
 
 
-3. Add new **project_type** in [docker-image.yml](.github%2Fworkflows%2Fdocker-image.yml) and [publish_artifacts.yml](.github%2Fworkflows%2Fpublish_artifacts.yml)
+3. Create new [Dockerfile](https://docs.docker.com/build/building/packaging/#:~:text=A%20Dockerfile%20is%20a%20text,Description) using a template ```Dockerfile_{your_project}``` and place it into [dockerfiles](dockerfiles) dir.
 
 
-4. Create new [Dockerfile](https://docs.docker.com/build/building/packaging/#:~:text=A%20Dockerfile%20is%20a%20text,Description) using a template ```Dockerfile_{your_project}``` and place it into [dockerfiles](dockerfiles)[requirements](requirements) dir.
+4. Add new **project_type** in [docker-image.yml](.github%2Fworkflows%2Fdocker-image.yml) and [publish_artifacts.yml](.github%2Fworkflows%2Fpublish_artifacts.yml)
 
 
 5. Just Commit to [main branch](https://github.com/bralbral/PythonDockerImages/tree/main)
