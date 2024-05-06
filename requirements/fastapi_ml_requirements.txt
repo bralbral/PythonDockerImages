@@ -1,7 +1,7 @@
 # async acces to os
 aiofiles==23.2.1
 # json speedup serialising
-orjson==3.10.2
+orjson==3.10.3
 ujson==5.9.0
 python-dateutil==2.9.0.post0
 # yaml-file
