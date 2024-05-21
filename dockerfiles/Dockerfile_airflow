@@ -3,7 +3,7 @@ FROM apache/airflow:slim-2.9.1-python3.11
 USER root
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+    &&  apt-get install -y --no-install-recommends \
         nano git mc \
         curl \
         unixodbc-dev \
@@ -14,8 +14,7 @@ RUN apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql18 mssql-tools18 \
     && apt-get autoremove -yqq --purge \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /tmp/*  # Clean up temporary files
+    && rm -rf /var/lib/apt/lists/*
 
 USER airflow
 WORKDIR /opt/airflow
