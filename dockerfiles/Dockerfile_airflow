@@ -3,10 +3,15 @@ USER root
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
          nano git mc \
-  &&  curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -  \
+  # ----------------mssql block---------------------
+  && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -  \
   && curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list  \
   && apt-get update  \
-  && ACCEPT_EULA=Y apt-get -y install msodbcsql17 \
+  && apt-get -y install unixodbc-dev \
+  && apt-get -y install -y libgssapi-krb5-2 \
+  && ACCEPT_EULA=Y apt-get -y install msodbcsql18 \
+  && ACCEPT_EULA=Y apt-get -y install mssql-tools18 \
+  # -------------------------------------------------
   && apt-get autoremove -yqq --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
