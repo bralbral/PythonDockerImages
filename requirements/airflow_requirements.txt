@@ -40,4 +40,4 @@ pytz==2024.1
 pytzdata==2020.1
 PyYAML==6.0.1
 docker==7.0.0
-requests==2.31.0
+requests==2.32.0
