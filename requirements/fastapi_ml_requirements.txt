@@ -7,7 +7,7 @@ python-dateutil==2.9.0.post0
 # yaml-file
 PyYAML==6.0.1
 # fastapi
-fastapi==0.111.0
+fastapi==0.110.3
 # fastapi rate limitter
 slowapi==0.1.9
 # uvicorn
