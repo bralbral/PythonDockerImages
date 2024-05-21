@@ -34,7 +34,7 @@ elasticsearch[async]==8.13.0
 fastparquet==2024.2.0
 ldap3==2.9.1
 clickhouse-driver==0.2.7
-orjson==3.10.2
+orjson==3.10.3
 minio==7.2.7
 numpy==1.26.4
 pandas==2.1.2
