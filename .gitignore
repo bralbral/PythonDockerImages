@@ -143,10 +143,4 @@ cython_debug/
 # Text Editor
 .vscode
 
-/temp
-/.temp
-/deprecated
-/downloads
 /key
-/.prefect/*
-/prefect/*
