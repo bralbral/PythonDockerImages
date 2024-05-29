@@ -8,6 +8,9 @@ RUN apt-get update \
         curl \
         unixodbc-dev \
         libgssapi-krb5-2 \
+        pkg-config \ 
+        build-essential \
+        libmysqlclient-dev \
     && curl https://packages.microsoft.com/keys/microsoft.asc | tee /etc/apt/trusted.gpg.d/microsoft.asc \
     && curl https://packages.microsoft.com/config/debian/12/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
