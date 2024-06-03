@@ -36,6 +36,7 @@ apache-airflow-providers-common-io==1.3.1
 # https://github.com/andreax79/airflow-code-editor
 airflow-code-editor==7.6.0
 # depends
+amqp==5.2.0
 structlog==24.1.0
 aiochclient==2.6.0
 aiofiles==23.2.1
