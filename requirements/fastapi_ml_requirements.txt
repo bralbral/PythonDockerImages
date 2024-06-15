@@ -11,7 +11,7 @@ fastapi==0.110.3
 # fastapi rate limitter
 slowapi==0.1.9
 # uvicorn
-uvicorn==0.29.0
+uvicorn==0.30.1
 # uvicorn-speedup
 httptools==0.6.1
 structlog==24.1.0
