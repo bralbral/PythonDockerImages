@@ -16,7 +16,7 @@ apache-airflow-providers-amazon==8.21.0
 apache-airflow-providers-imap==3.6.0
 apache-airflow-providers-http==4.11.0
 apache-airflow-providers-redis==3.7.0
-apache-airflow-providers-sftp==4.10.0
+apache-airflow-providers-sftp==4.10.1
 apache-airflow-providers-jdbc==4.3.0
 apache-airflow-providers-mongo==4.1.0
 apache-airflow-providers-odbc==4.6.0
