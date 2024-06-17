@@ -1,4 +1,4 @@
-apache-airflow==2.9.1
+apache-airflow==2.9.2
 # flask-session pinned before fix
 # https://github.com/apache/airflow/issues/36897
 flask-session<0.6
