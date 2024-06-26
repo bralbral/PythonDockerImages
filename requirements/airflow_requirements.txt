@@ -1,4 +1,4 @@
-apache-airflow==2.9.1
+apache-airflow==2.9.2
 # flask-session pinned before fix
 # https://github.com/apache/airflow/issues/36897
 flask-session<0.6
@@ -34,7 +34,7 @@ apache-airflow-providers-docker==3.11.0
 apache-airflow-providers-common-io==1.3.1
 # airflow-code-editor
 # https://github.com/andreax79/airflow-code-editor
-airflow-code-editor==7.6.0
+# airflow-code-editor==7.6.0
 # depends
 amqp==5.2.0
 structlog==24.1.0
