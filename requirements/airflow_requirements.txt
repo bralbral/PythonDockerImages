@@ -1,7 +1,5 @@
 apache-airflow==2.9.2
-# flask-session pinned before fix
-# https://github.com/apache/airflow/issues/36897
-flask-session<0.6
+flask-session<0.6 # locked before fix https://github.com/apache/airflow/issues/36897
 apache-airflow-providers-postgres==5.11.0
 apache-airflow-providers-celery==3.7.0
 apache-airflow-providers-microsoft-mssql==3.7.0
@@ -53,7 +51,7 @@ clickhouse-driver==0.2.7
 orjson==3.10.3
 minio==7.2.7
 numpy==1.26.4
-pandas==2.1.2
+pandas==2.1.2 # locked until airflow starts use new sqlalchemy
 paramiko==3.4.0
 rocketchat-API==1.32.0
 uvloop==0.19.0; platform_system=='Linux'
