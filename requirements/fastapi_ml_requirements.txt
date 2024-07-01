@@ -33,7 +33,7 @@ en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_
 pre-commit==3.7.1
 black==24.4.2
 autoflake==2.3.1
-reorder-python-imports==3.12.0
+reorder-python-imports==3.13.0
 pyupgrade==3.16.0
 git+https://github.com/aio-libs/sort-all.git
 # tests
