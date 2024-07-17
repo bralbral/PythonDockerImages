@@ -1,4 +1,4 @@
-apache-airflow==2.9.2
+apache-airflow==2.9.3
 flask-session<0.6 # locked before fix https://github.com/apache/airflow/issues/36897
 apache-airflow-providers-postgres==5.11.0
 apache-airflow-providers-celery==3.7.0
