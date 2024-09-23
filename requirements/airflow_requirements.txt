@@ -51,7 +51,7 @@ clickhouse-driver==0.2.7
 orjson==3.10.3
 minio==7.2.7
 numpy==1.26.4
-pandas==2.1.2 # locked until airflow starts use new sqlalchemy
+pandas==2.2.3 # locked until airflow starts use new sqlalchemy
 paramiko==3.4.0
 rocketchat-API==1.32.0
 uvloop==0.19.0; platform_system=='Linux'
