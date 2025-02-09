@@ -9,9 +9,9 @@ jobs:
     environment: requirements
     strategy:
       matrix:
-        platform: [ "ubuntu-latest", "windows-latest" ]
+        platform: [ "ubuntu-latest" ]
         python-version: ["3.11"]
-        project_type: ["airflow", "fastapi_ml"]
+        project_type: ["airflow", "fastapi_ml", "spark"]
         architecture: ["x64"]
 
     runs-on: ${{ matrix.platform }}

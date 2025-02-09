@@ -1,0 +1,50 @@
+FROM python:3.11-bookworm as spark-base
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    nano git mc curl vim unzip rsync ssh sudo \
+    unixodbc-dev libgssapi-krb5-2 pkg-config build-essential \
+    default-libmysqlclient-dev libxml2-dev libxmlsec1-dev libxmlsec1-openssl \
+    openjdk-17-jdk software-properties-common \
+    && curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg \
+    && echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/debian/12/prod bookworm main" | tee /etc/apt/sources.list.d/microsoft.list \
+    && apt-get update && ACCEPT_EULA=Y apt-get install -y --no-install-recommends \
+    msodbcsql18 mssql-tools18 \
+    && apt-get autoremove -y --purge && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+
+ENV SPARK_HOME="/opt/spark" \
+    HADOOP_HOME="/opt/hadoop" \
+    SPARK_VERSION=3.5.4 \
+    PYTHONPATH="/opt/spark/python/:$PYTHONPATH" \
+    PATH="/opt/spark/sbin:/opt/spark/bin:$PATH" \
+    SPARK_MASTER="spark://spark-master:7077" \
+    SPARK_MASTER_HOST="spark-master" \
+    SPARK_MASTER_PORT=7077 \
+    PYSPARK_PYTHON="python3" \
+    IJAVA_CLASSPATH="/opt/spark/jars/*"
+
+RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
+WORKDIR ${SPARK_HOME}
+
+# Загрузка и установка Spark
+RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+
+# Оптимизированный слой с зависимостями Python
+FROM spark-base as pyspark
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Копирование конфигураций
+COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
+
+# Даем права на выполнение
+RUN chmod +x $SPARK_HOME/sbin/* $SPARK_HOME/bin/*
+
+# Финальный слой
+FROM pyspark
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
+CMD ["bash"]
