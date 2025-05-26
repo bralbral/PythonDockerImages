@@ -20,7 +20,7 @@ elasticsearch[async]==8.14.0
 # asyncio speedup
 uvloop==0.20.0; sys_platform == 'linux'
 # spacy block
-spacy==3.7.4
+spacy==3.8.7
 # fast-ru
 ru-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_sm-3.7.0/ru_core_news_sm-3.7.0-py3-none-any.whl
 # fast-en
