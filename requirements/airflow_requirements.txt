@@ -62,7 +62,7 @@ pytz==2024.2
 pytzdata==2020.1
 PyYAML==6.0.2
 docker==7.1.0
-requests==2.32.3
+requests==2.32.4
 statsd==4.0.1
 # develop
 pre-commit==4.0.1
