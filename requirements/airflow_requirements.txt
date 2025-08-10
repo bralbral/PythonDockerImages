@@ -18,7 +18,7 @@ apache-airflow-providers-jdbc==5.0.0
 apache-airflow-providers-mongo==5.0.0
 apache-airflow-providers-odbc==4.9.0
 apache-airflow-providers-elasticsearch==6.0.0
-apache-airflow-providers-mysql==6.0.0
+apache-airflow-providers-mysql==6.2.0
 apache-airflow-providers-ssh==4.0.0
 apache-airflow-providers-apache-spark==5.0.0
 apache-airflow-providers-apache-kafka==1.7.0
