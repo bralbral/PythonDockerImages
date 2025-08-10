@@ -1,4 +1,4 @@
-FROM apache/airflow:slim-2.10.4-python3.11
+FROM apache/airflow:slim-2.11.0-python3.11
 
 USER root
 
@@ -26,4 +26,7 @@ USER airflow
 WORKDIR /opt/airflow
 
 COPY ./requirements.txt .
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+RUN  pip install uv && pip install --no-cache-dir --upgrade pip \
+    && uv pip install --no-cache-dir -r requirements.txt --system \
+    && rm -rf /var/lib/apt/lists/*
