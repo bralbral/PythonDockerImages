@@ -28,5 +28,5 @@ WORKDIR /opt/airflow
 COPY ./requirements.txt .
 
 RUN  pip install uv && pip install --no-cache-dir --upgrade pip \
-    && uv pip install --no-cache-dir -r requirements.txt --system \
+    && uv pip install --no-cache-dir -r requirements.txt \
     && rm -rf /var/lib/apt/lists/*
