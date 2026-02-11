@@ -29,6 +29,7 @@ apache-airflow-providers-ssh==4.3.1
 # s3 xcom backend
 #https://airflow.apache.org/docs/apache-airflow-providers-common-io/stable/xcom_backend.html
 apache-airflow-providers-common-io==1.7.1
+pyspark==3.5.4 # pinned
 amqp==5.3.1
 structlog==25.5.0
 aiochclient==2.6.0
