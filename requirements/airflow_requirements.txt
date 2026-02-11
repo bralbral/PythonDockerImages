@@ -36,7 +36,7 @@ aiochclient==2.6.0
 aiofiles==25.1.0
 aiohttp-cors==0.8.1
 aioodbc==0.5.0
-aiosqlite==0.22.0
+aiosqlite==0.21.0
 alembic==1.18.4
 asyncpg==0.31.0
 PyMySQL==1.1.2
