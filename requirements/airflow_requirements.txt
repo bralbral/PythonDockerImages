@@ -35,7 +35,6 @@ docker==7.1.0
 requests==2.32.4
 statsd==4.0.1
 # develop
-uv==0.9.6
 pre-commit==4.3.0
 black==25.1.0
 autoflake==2.3.1
