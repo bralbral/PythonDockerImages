@@ -10,8 +10,8 @@ jobs:
     strategy:
       matrix:
         platform: [ "ubuntu-latest" ]
-        python-version: ["3.11"]
-        project_type: ["airflow", ] # "spark"]
+        python-version: ["3.12"]
+        project_type: ["airflow", "spark"]
         architecture: ["x64"]
 
     runs-on: ${{ matrix.platform }}
