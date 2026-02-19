@@ -65,6 +65,11 @@ PyYAML==6.0.3
 docker==7.1.0
 requests==2.32.5
 statsd==4.0.1
+kml2geojson==5.1.0
+asterix4py==1.0.6
+dpkt==1.9.8
+folium==0.19.5
+offline_folium==0.1.2
 # develop
 uv==0.10.2
 pre-commit==4.5.1
@@ -73,9 +78,3 @@ autoflake==2.3.1
 reorder-python-imports==3.16.0
 pyupgrade==3.21.2
 git+https://github.com/aio-libs/sort-all.git
-kml2geojson==5.1.0
-asterix4py==1.0.6
-dpkt==1.9.8
-folium==0.19.5
-offline_folium==0.1.2
-pymysql==1.1.2
