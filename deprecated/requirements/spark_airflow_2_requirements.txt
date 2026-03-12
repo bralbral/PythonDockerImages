@@ -14,7 +14,7 @@ elasticsearch[async]==8.17.1
 fastparquet==2024.11.0
 ldap3==2.9.1
 clickhouse-driver==0.2.9
-orjson==3.10.15
+orjson==3.11.6
 minio==7.2.15
 numpy==1.26.4
 pandas==2.1.2 # locked until airflow starts use new sqlalchemy
