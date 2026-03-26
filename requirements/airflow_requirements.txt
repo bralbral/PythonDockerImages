@@ -63,7 +63,7 @@ pytz==2025.2
 pytzdata==2020.1
 PyYAML==6.0.3
 docker==7.1.0
-requests==2.32.5
+requests==2.33.0
 statsd==4.0.1
 kml2geojson==5.1.0
 asterix4py==1.0.6
