@@ -71,7 +71,7 @@ dpkt==1.9.8
 folium==0.19.5
 offline_folium==0.1.2
 # develop
-uv==0.10.2
+uv==0.11.6
 pre-commit==4.5.1
 black==26.1.0
 autoflake==2.3.1
