@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV SPARK_HOME="/opt/spark" \
     HADOOP_HOME="/opt/hadoop" \
-    SPARK_VERSION=3.5.4 \
+    SPARK_VERSION=4.1.1 \
     PYTHONPATH="/opt/spark/python/:$PYTHONPATH" \
     PATH="/opt/spark/sbin:/opt/spark/bin:$PATH" \
     SPARK_MASTER="spark://spark-master:7077" \
@@ -28,7 +28,10 @@ RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 # Загрузка и установка Spark
-RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+# Для архивных версий и 3-го hadoop
+# RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+# для текущих версий и 3-го hadoop
+RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 
 # Оптимизированный слой с зависимостями Python
 FROM spark-base as pyspark
