@@ -28,6 +28,7 @@ RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 # Загрузка и установка Spark
+# в 4.0.0 скала 2.13
 # Для архивных версий и 3-го hadoop
 # RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 # для текущих версий и 3-го hadoop
