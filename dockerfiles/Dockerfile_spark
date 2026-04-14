@@ -28,7 +28,10 @@ RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 # Загрузка и установка Spark
-RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+# Для архивных версий
+# RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+# для текущих версий
+RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 
 # Оптимизированный слой с зависимостями Python
 FROM spark-base as pyspark
