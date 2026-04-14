@@ -37,7 +37,7 @@ reorder-python-imports==3.13.0
 pyupgrade==3.16.0
 git+https://github.com/aio-libs/sort-all.git
 # tests
-pytest==8.2.0
+pytest==9.0.3
 pytest-mock==3.14.0
 pytest-asyncio==0.23.6
 # coverage report
