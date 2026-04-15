@@ -18,9 +18,6 @@ ENV SPARK_HOME="/opt/spark" \
     SPARK_VERSION=4.1.1 \
     PYTHONPATH="/opt/spark/python/:$PYTHONPATH" \
     PATH="/opt/spark/sbin:/opt/spark/bin:$PATH" \
-    SPARK_MASTER="spark://spark-master:7077" \
-    SPARK_MASTER_HOST="spark-master" \
-    SPARK_MASTER_PORT=7077 \
     PYSPARK_PYTHON="python3" \
     IJAVA_CLASSPATH="/opt/spark/jars/*"
 
@@ -28,9 +25,10 @@ RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 # Загрузка и установка Spark
-# в 4.0.0 скала 2.13
 # Для архивных версий и 3-го hadoop
 # RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
+
+# в 4.0.0 скала 2.13
 # для текущих версий и 3-го hadoop
 RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 
@@ -38,9 +36,6 @@ RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPA
 FROM spark-base as pyspark
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-
-# Копирование конфигураций
-# COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
 
 # Даем права на выполнение
 RUN chmod +x $SPARK_HOME/sbin/* $SPARK_HOME/bin/*
