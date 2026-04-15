@@ -40,7 +40,7 @@ COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Копирование конфигураций
-COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
+# COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
 
 # Даем права на выполнение
 RUN chmod +x $SPARK_HOME/sbin/* $SPARK_HOME/bin/*
