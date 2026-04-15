@@ -1,0 +1,33 @@
+x-spark-common: &spark-common
+  image: bral1488/python_docker_builder:3.12-spark-1776275237
+  environment:
+    - SPARK_MASTER=spark://spark-master:7077
+  volumes:
+    - ./spark-events:/tmp/spark-events
+
+
+services:
+  spark-master:
+    <<: *spark-common
+    container_name: spark-master
+    hostname: spark-master
+    command: ["master"]
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+
+  spark-worker:
+    container_name: spark-worker
+    <<: *spark-common
+    depends_on:
+      - spark-master
+    command: ["worker"]
+
+  spark-history:
+    container_name: spark-history
+    <<: *spark-common
+    depends_on:
+      - spark-master
+    command: ["history"]
+    ports:
+      - "18080:18080"
