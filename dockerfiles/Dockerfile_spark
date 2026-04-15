@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get autoremove -y --purge && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-
 ENV SPARK_HOME="/opt/spark" \
     HADOOP_HOME="/opt/hadoop" \
     SPARK_VERSION=4.1.1 \
+    SPARK_NO_DAEMONIZE="true" \
     PYTHONPATH="/opt/spark/python/:$PYTHONPATH" \
     PATH="/opt/spark/sbin:/opt/spark/bin:$PATH" \
     PYSPARK_PYTHON="python3" \
@@ -24,26 +24,23 @@ ENV SPARK_HOME="/opt/spark" \
 RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
-# Загрузка и установка Spark
-# Для архивных версий и 3-го hadoop
+# GET SPARK
+# FOR OLD VERSIONS && HADOOP 3
 # RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 
-# в 4.0.0 скала 2.13
-# для текущих версий и 3-го hadoop
+# SPARK >= 4.0.0 USE-SCALA-2.13
+# FOR CURRENT VERSIONS && HADOOP 3
 RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
 
-# Оптимизированный слой с зависимостями Python
+# INSTALL PYTHON REQS
 FROM spark-base as pyspark
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Даем права на выполнение
 RUN chmod +x $SPARK_HOME/sbin/* $SPARK_HOME/bin/*
 
-# Финальный слой
 FROM pyspark
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["bash"]
