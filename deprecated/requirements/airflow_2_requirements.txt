@@ -55,7 +55,7 @@ rocketchat-API==1.35.1
 uvloop==0.21.0; platform_system=='Linux'
 lxml==6.0.0
 sentry-sdk==2.34.1
-nltk==3.9.1
+nltk==3.9.4
 pydantic==2.11.7
 python-dateutil==2.9.0.post0
 python-slugify==8.0.4
