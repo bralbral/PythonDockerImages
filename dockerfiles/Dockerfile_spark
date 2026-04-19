@@ -19,15 +19,13 @@ ENV SPARK_HOME="/opt/spark" \
     PYTHONPATH="/opt/spark/python/:$PYTHONPATH" \
     PATH="/opt/spark/sbin:/opt/spark/bin:$PATH" \
     PYSPARK_PYTHON="python3" \
-    IJAVA_CLASSPATH="/opt/spark/jars/*"
+    SPARK_EXTRA_CLASSPATH="/opt/spark/custom-jars/*"
 
 RUN mkdir -p ${HADOOP_HOME} ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
-# GET SPARK
 # FOR OLD VERSIONS && HADOOP 3
 # RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
-
 # SPARK >= 4.0.0 USE-SCALA-2.13
 # FOR CURRENT VERSIONS && HADOOP 3
 RUN curl -fsSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz | tar -xz --strip-components=1 -C ${SPARK_HOME}
