@@ -11,7 +11,7 @@ apache-airflow-providers-smtp==1.7.0
 apache-airflow-providers-samba==4.9.0
 apache-airflow-providers-amazon==9.2.0
 apache-airflow-providers-imap==3.8.0
-apache-airflow-providers-http==5.0.0
+apache-airflow-providers-http==6.0.0
 apache-airflow-providers-redis==4.0.0
 apache-airflow-providers-sftp==5.0.0
 apache-airflow-providers-jdbc==5.0.0
