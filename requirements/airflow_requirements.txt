@@ -33,7 +33,7 @@ apache-airflow-providers-ydb==2.3.2
 # === Data Processing ===
 pyspark==4.1.1
 numpy==2.4.2
-pandas==3.0.0
+pandas==3.0.2
 fastparquet==2025.12.0
 nltk==3.9.2
 
