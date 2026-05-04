@@ -9,7 +9,7 @@ apache-airflow-providers-celery==3.16.0
 apache-airflow-providers-common-io==1.7.1
 apache-airflow-providers-common-sql==1.35.0
 apache-airflow-providers-docker==4.5.2
-apache-airflow-providers-elasticsearch==6.4.4
+apache-airflow-providers-elasticsearch==6.5.3
 apache-airflow-providers-ftp==3.14.1
 apache-airflow-providers-grpc==3.9.2
 apache-airflow-providers-hashicorp==4.6.0
