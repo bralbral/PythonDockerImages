@@ -55,7 +55,7 @@ confluent-kafka==2.13.0
 requests==2.32.5
 aiohttp-cors==0.8.1
 docker==7.1.0
-elasticsearch[async]==8.19.0
+elasticsearch[async]==9.3.0
 minio==7.2.20
 rocketchat-API==3.1.0
 
