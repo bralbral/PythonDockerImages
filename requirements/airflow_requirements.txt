@@ -94,7 +94,7 @@ pytz==2025.2
 uv==0.11.8
 pre-commit==4.6.0
 black==26.3.1
-autoflake==2.3.1
+autoflake==2.3.3
 reorder-python-imports==3.16.0
 pyupgrade==3.21.2
 
