@@ -52,7 +52,7 @@ amqp==5.3.1
 confluent-kafka==2.13.0
 
 # === HTTP / API Clients ===
-requests==2.32.5
+requests==2.33.1
 aiohttp-cors==0.8.1
 docker==7.1.0
 elasticsearch[async]==8.19.0
