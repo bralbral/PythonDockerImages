@@ -91,7 +91,7 @@ python-slugify==8.0.4
 pytz==2026.2
 
 # === Dev Tools ===
-uv==0.11.8
+uv==0.11.14
 pre-commit==4.6.0
 black==26.3.1
 autoflake==2.3.3
