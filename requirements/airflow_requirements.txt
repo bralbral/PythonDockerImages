@@ -3,7 +3,7 @@ apache-airflow==3.1.7
 
 # === Airflow Providers ===
 apache-airflow-providers-amazon==9.28.0
-apache-airflow-providers-apache-kafka==1.13.3
+apache-airflow-providers-apache-kafka==1.14.0
 apache-airflow-providers-apache-spark[pyspark]==6.0.1
 apache-airflow-providers-celery==3.16.0
 apache-airflow-providers-common-io==1.7.2
