@@ -35,7 +35,7 @@ pyspark==4.1.1
 numpy==2.4.4
 pandas==3.0.3
 fastparquet==2025.12.0
-nltk==3.9.2
+nltk==3.9.4
 
 # === Database Drivers ===
 asyncpg==0.31.0
