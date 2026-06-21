@@ -1,5 +1,5 @@
 # === Core ===
-apache-airflow==3.1.7
+apache-airflow==3.2.1rc1
 
 # === Airflow Providers ===
 apache-airflow-providers-amazon==9.28.0
