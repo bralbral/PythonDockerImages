@@ -70,7 +70,7 @@ lxml==6.1.0
 dpkt==1.9.8
 
 # === Geo / Mapping ===
-folium==0.19.5
+folium==0.20.0
 offline_folium==0.1.2
 kml2geojson==5.1.0
 asterix4py==1.0.6
