@@ -31,7 +31,7 @@ apache-airflow-providers-ssh==4.3.1
 apache-airflow-providers-ydb==2.5.2
 
 # === Data Processing ===
-pyspark==4.1.1
+pyspark==4.1.2
 numpy==2.4.4
 pandas==3.0.3
 fastparquet==2025.12.0
