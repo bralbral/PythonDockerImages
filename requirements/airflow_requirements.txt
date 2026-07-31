@@ -23,7 +23,7 @@ apache-airflow-providers-odbc==4.12.2
 apache-airflow-providers-postgres==6.6.3
 apache-airflow-providers-qdrant==1.5.5
 apache-airflow-providers-redis==4.4.5
-apache-airflow-providers-samba==4.12.5
+apache-airflow-providers-samba==4.12.6
 apache-airflow-providers-sftp==5.8.1
 apache-airflow-providers-smtp==3.0.0
 apache-airflow-providers-sqlite==4.2.1
